@@ -1,0 +1,31 @@
+.circle-button{
+    width: 45%;
+    aspect-ratio: 1;
+    margin: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgb(147 192 121) 0%, rgb(93 136 64) 30%, rgb(166 207 149) 60%, rgb(98 141 70) 100%);
+    border-radius: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    border: 1px solid #92b080;
+    padding: 1rem;
+}
+
+.square-location-btn{
+    background: linear-gradient(0deg, rgb(211 213 216) 0%, rgb(101 99 99) 30%, rgb(164 164 164) 60%, rgb(202 204 206) 100%) !important;
+}
+
+.send-btn{
+    position: absolute;
+    bottom: 10%;
+    left: 3rem;
+    width: calc(100vw - 6rem) !important;
+}
+
+@media screen and (max-width: 380px) {
+    .circle-button {
+        font-size: 1rem;
+    }
+}

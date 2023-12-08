@@ -1,0 +1,44 @@
+.square-text{
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 2px solid #5b9bd5;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(0deg, rgb(214 220 229) 0%, rgb(163 193 229) 30%, rgb(210 218 229) 60%, rgb(163 193 229) 100%);
+}
+
+.password{
+    text-align: center;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.small-text {
+    font-size: 1.5rem;
+}
+
+.left-text {
+    text-align: left;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.location-btn {
+    font-size: 1rem;
+    padding: 0.85rem 0.5rem;
+}
+
+@media screen and (max-width: 380px) {
+    .square-text, .location-btn, .small-text, .password{
+        font-size: 1rem;
+    }
+}
