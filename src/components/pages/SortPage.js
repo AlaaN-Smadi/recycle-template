@@ -6,7 +6,7 @@ import SquareButton from "../buttons/SquareButton";
 export default function SortPage(props) {
     return (
         <div className="inner-page">
-            <SquareText text={"الفرز حسب األصول"} />
+            <SquareText text={"الفرز حسب الأصول"} />
             <IonGrid>
                 <IonRow>
                     <CircleButton title={"بلاستيك"} />
