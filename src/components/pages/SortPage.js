@@ -2,28 +2,32 @@ import { IonGrid, IonRow } from "@ionic/react";
 import SquareText from "../customText/SquareTitle";
 import CircleButton from "../buttons/CircleCutton";
 import SquareButton from "../buttons/SquareButton";
+import Notifications from "./Notifications/Notifications";
 
 const sections = ["بلاستيك", "حديد", "ورق وكتب", "المنيوم", "زجاج", "كرتون", "الكترونيات", "نحاس"];
 
 export default function SortPage(props) {
-    
+
     const handleSelectSection = (section) => {
-        props.setFormData({...props.formData, section});
+        props.setFormData({ ...props.formData, section });
     }
-    
+
     return (
         <div className="inner-page">
-            <SquareText text={"الفرز حسب الأصول"} />
+            <div style={{display: "flex"}}>
+                <Notifications />
+                <SquareText text={"الفرز حسب الأصول"} />
+            </div>
             <IonGrid>
                 {
                     sections.map((_section, index) => {
                         if (index % 2 === 0) {
                             return (
-                                <IonRow key={index}>
+                                <IonRow className="ion-justify-content-center" key={index}>
                                     <CircleButton activeSelect={props.formData.section === sections[index]} handleClick={handleSelectSection} title={sections[index]} />
                                     {
                                         sections[index + 1] &&
-                                        <CircleButton activeSelect={props.formData.section === sections[index+1]} handleClick={handleSelectSection} title={sections[index + 1]} />
+                                        <CircleButton activeSelect={props.formData.section === sections[index + 1]} handleClick={handleSelectSection} title={sections[index + 1]} />
                                     }
                                 </IonRow>
                             )

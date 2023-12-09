@@ -11,7 +11,7 @@ export default function AppAlert(props) {
                 header={props.alertHeader}
                 message={props.alertMessage}
                 buttons={[props.okAction]}
-                onDidDismiss={props.handleNext}
+                onDidDismiss={props.handleDismiss}
             ></IonAlert>
         </>
     )

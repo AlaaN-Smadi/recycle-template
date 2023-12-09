@@ -3,6 +3,7 @@ import SquareText from "../customText/SquareTitle";
 import SquareButton from "../buttons/SquareButton";
 import { useState } from "react";
 import MapView from "./Map";
+import SquareInput from "../customText/SquareInput";
 
 
 export default function InfoPage(props) {
@@ -10,8 +11,11 @@ export default function InfoPage(props) {
 
     const handleSelectLocation = (locationName) => {
         const location = props.locations.find(_loc => _loc.name === locationName);
-        console.log("🚀 ~ file: InfoPage.js:13 ~ handleSelectLocation ~ location:", location)
         props.setFormData({ ...props.formData, location });
+    }
+    
+    const handleNumberInput = (e) => {
+        props.setFormData({ ...props.formData, phoneNumber: e.target.value });
     }
 
     const openMap = () => {
@@ -35,7 +39,7 @@ export default function InfoPage(props) {
                     <IonCol >
                         <IonRow>
                             <IonCol >
-                                <SquareText leftText={true} smallText={true} text={"+974"} />
+                                <SquareInput handleChange={handleNumberInput} type="tel" leftText={true} smallText={true} placeholder={"+974"} />
                             </IonCol>
                             <IonCol >
                                 <SquareText smallText={true} text={"رقم الهاتف"} />
@@ -94,7 +98,7 @@ export default function InfoPage(props) {
                     </IonCol>
                 </IonRow>
             </IonGrid>
-            <SquareButton disableClick={!props.formData.location.name} handleClick={props.handleNext} btnText={"التالي"} />
+            <SquareButton disableClick={!props.formData.location.name || !props.formData.phoneNumber || `${props.formData.phoneNumber}`.length < 6} handleClick={props.handleNext} btnText={"التالي"} />
 
         </div>
     )
