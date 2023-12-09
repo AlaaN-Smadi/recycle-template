@@ -24,6 +24,24 @@
     width: calc(100vw - 6rem) !important;
 }
 
+.active-border{
+    border: 5px solid #326612;
+    box-shadow: 0px 0 7px 2px #326612;
+}
+
+.disabled{
+    opacity: 0.5;
+    pointer-events:none;
+}
+
+.fixed-to-bottom {
+    position: fixed;
+    bottom: 5rem;
+    width: 50% !important;
+    z-index: 1502200000;
+    left: 25%;
+}
+
 @media screen and (max-width: 380px) {
     .circle-button {
         font-size: 1rem;

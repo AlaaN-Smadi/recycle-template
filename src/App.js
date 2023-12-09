@@ -31,8 +31,50 @@ const appPages = {
   signupPage: "signupPage",
 }
 
+const locations = [
+  {
+      name: "الدوحة",
+      lat: 25.285344108893835,
+      lng: 51.532018508215785,
+  },
+  {
+      name: "الريان",
+      lat: 25.28585807964291,
+      lng: 51.420444525668884
+  },
+  {
+      name: "الوكرة",
+      lat: 25.165842419848595,
+      lng: 51.597716300933776
+  },
+  {
+      name: "الخور",
+      lat: 25.680517099289098,
+      lng: 51.49770285815587
+  },
+  {
+      name: "ام صلال",
+      lat: 25.398059011068945,
+      lng: 51.42442872252488
+  },
+  {
+      name: "الظعاين",
+      lat: 25.45662682198745,
+      lng: 51.47874996587755
+  },
+  {
+      name: "الشمال",
+      lat: 26.06630468670384,
+      lng: 51.258086458892954
+  }
+];
+
 function App() {
   const [activePage, setActivePage] = useState(appPages.sortPage);
+
+  const [formData, setFormData] = useState({
+    location: locations[0]
+  });
 
   const handleNextPage = () => {
     switch (activePage) {
@@ -53,15 +95,15 @@ function App() {
     <div className="App">
       {
         activePage === appPages.sortPage &&
-        <SortPage handleNext={handleNextPage} />
+        <SortPage formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
       }
       {
         activePage === appPages.infoPage &&
-        <InfoPage handleNext={handleNextPage} />
+        <InfoPage locations={locations} formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
       }
       {
         activePage === appPages.signupPage &&
-        <SignUp handleNext={handleNextPage} />
+        <SignUp formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
       }
     </div>
   );

@@ -5,6 +5,7 @@ import AppAlert from "../buttons/Alert";
 import { useEffect, useState } from "react";
 
 export default function SignUp(props) {
+    console.log('form data -=> ', props.formData);
     const [showSender, setShowSender] = useState(false);
     useEffect(() => {
         setTimeout(() => {
