@@ -4,7 +4,10 @@ import SquareButton from "./SquareButton";
 export default function AppAlert(props) {
     return (
         <>
-            <SquareButton {...props} />
+            <div className="send-btn" style={{ display: "flex", gap: "0.5rem" }}>
+                <SquareButton {...props} handleClick={props.handleNextPage} />
+                <SquareButton handleClick={props.handleBackPage} btnText={"السابق"} />
+            </div>
 
             <IonAlert
                 trigger={props.id}

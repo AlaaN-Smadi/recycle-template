@@ -91,6 +91,18 @@ function App() {
         break;
     }
   }
+  
+  const handleBackPage = () => {
+    switch (activePage) {
+      case appPages.infoPage:
+        setActivePage(appPages.sortPage);
+        break;
+      case appPages.signupPage:
+      default:
+        setActivePage(appPages.infoPage);
+        break;
+    }
+  }
 
   return (
     <div className="App">
@@ -100,11 +112,11 @@ function App() {
       }
       {
         activePage === appPages.infoPage &&
-        <InfoPage locations={locations} formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
+        <InfoPage handleBackPage={handleBackPage} locations={locations} formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
       }
       {
         activePage === appPages.signupPage &&
-        <SignUp formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
+        <SignUp handleBackPage={handleBackPage} formData={formData} setFormData={setFormData} handleNext={handleNextPage} />
       }
     </div>
   );

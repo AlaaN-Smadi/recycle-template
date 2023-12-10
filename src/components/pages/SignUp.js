@@ -5,6 +5,7 @@ import AppAlert from "../buttons/Alert";
 import { useEffect, useState } from "react";
 import SquareInput from "../customText/SquareInput";
 import { storageManager } from "../../assets/Storage";
+import SquareButton from "../buttons/SquareButton";
 
 export default function SignUp(props) {
     console.log('form data -=> ', props.formData);
@@ -59,7 +60,7 @@ export default function SignUp(props) {
             </IonGrid>
             {
                 showSender &&
-                <AppAlert disableClick={props.formData.priceType === "مقابل مادي" && !props.formData.price} handleDismiss={handleFinish} okAction={"تم"} alertMessage={"تم حفظ المعلومات بنجاح"} alertHeader={"تم الحفظ"} id={"sendBtn"} send={true} btnText={"ارسال"} />
+                <AppAlert handleBackPage={props.handleBackPage} disableClick={props.formData.priceType === "مقابل مادي" && !props.formData.price} handleDismiss={handleFinish} okAction={"تم"} alertMessage={"تم حفظ المعلومات بنجاح"} alertHeader={"تم الحفظ"} id={"sendBtn"} send={true} btnText={"ارسال"} />
             }
         </div>
     )

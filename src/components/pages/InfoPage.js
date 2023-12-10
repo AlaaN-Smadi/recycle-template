@@ -13,7 +13,7 @@ export default function InfoPage(props) {
         const location = props.locations.find(_loc => _loc.name === locationName);
         props.setFormData({ ...props.formData, location });
     }
-    
+
     const handleNumberInput = (e) => {
         props.setFormData({ ...props.formData, phoneNumber: e.target.value });
     }
@@ -39,7 +39,7 @@ export default function InfoPage(props) {
                     <IonCol >
                         <IonRow>
                             <IonCol >
-                                <SquareInput handleChange={handleNumberInput} type="tel" leftText={true} smallText={true} placeholder={"+974"} />
+                                <SquareInput handleChange={handleNumberInput} inputMode={"decimal"} type="tel" leftText={true} smallText={true} placeholder={"+974"} />
                             </IonCol>
                             <IonCol >
                                 <SquareText smallText={true} text={"رقم الهاتف"} />
@@ -98,7 +98,10 @@ export default function InfoPage(props) {
                     </IonCol>
                 </IonRow>
             </IonGrid>
-            <SquareButton disableClick={!props.formData.location.name || !props.formData.phoneNumber || `${props.formData.phoneNumber}`.length < 6} handleClick={props.handleNext} btnText={"التالي"} />
+            <div style={{display: "flex", gap:"0.5rem"}}>
+                <SquareButton disableClick={!props.formData.location.name || !props.formData.phoneNumber || `${props.formData.phoneNumber}`.length < 8} handleClick={props.handleNext} btnText={"التالي"} />
+                <SquareButton handleClick={props.handleBackPage} btnText={"السابق"} />
+            </div>
 
         </div>
     )

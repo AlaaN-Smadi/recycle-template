@@ -3,6 +3,7 @@ export default function SquareInput(props){
         <input 
             onChange={props.handleChange}
             type={props.type}
+            inputMode={props.inputMode || ""}
             placeholder={props.placeholder}
             className={`square-text ${props.smallText && "small-text"} 
                 ${props.leftText && "left-text"} ${props.noMargin && "no-margin"} ${props.location && "location-btn"} 
