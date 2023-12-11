@@ -4,7 +4,7 @@ import CircleButton from "../buttons/CircleCutton";
 import SquareButton from "../buttons/SquareButton";
 import Notifications from "./Notifications/Notifications";
 
-const sections = ["بلاستيك", "حديد", "ورق وكتب", "المنيوم", "زجاج", "كرتون", "الكترونيات", "نحاس"];
+const sections = ["بلاستيك", "حديد", "ورق وكتب", "المنيوم", "زجاج", "أثاث", "الكترونيات", "نحاس"];
 
 export default function SortPage(props) {
 
